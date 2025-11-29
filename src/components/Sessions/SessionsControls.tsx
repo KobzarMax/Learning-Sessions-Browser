@@ -43,8 +43,14 @@ export default function SessionsControls({
       />
 
       <button
+        type="button"
         onClick={onToggleSort}
-        className="px-3 py-2 bg-gray-200 rounded-lg text-gray-900 whitespace-nowrap cursor-pointer flex items-center justify-center gap-2.5"
+        aria-label={`Sort by popularity (${sortDir === "asc" ? "ascending" : "descending"})`}
+        aria-pressed={sortDir === "desc"}
+        aria-sort={sortDir === "asc" ? "ascending" : "descending"}
+        className="px-3 py-2 bg-gray-200 rounded-lg text-gray-900 whitespace-nowrap cursor-pointer
+                         flex items-center justify-center gap-2.5
+                         focus:outline-none focus:ring-2 focus:ring-blue-500"
       >
         Popularity:
         <span
@@ -55,8 +61,11 @@ export default function SessionsControls({
       </button>
 
       <button
+        type="button"
         onClick={onSimulateError}
-        className="px-3 py-2 bg-red-100 text-red-700 rounded cursor-pointer"
+        aria-label="Simulate an error for testing"
+        className="px-3 py-2 bg-red-100 text-red-700 rounded cursor-pointer
+                   focus:outline-none focus:ring-2 focus:ring-red-500"
       >
         Simulate error
       </button>
